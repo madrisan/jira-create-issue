@@ -1,0 +1,7 @@
+config: 
+  jira_ca_bundle: /etc/pki/ca-trust/extracted/openssl/ca-bundle.trust.crt
+  jira_default_assignee: jira-assegnee
+  jira_default_project_id: 00001
+  jira_password: MyP@ssw0rd
+  jira_server: https://jira.example.com
+  jira_user: jira_login_name
