@@ -1,4 +1,4 @@
-config: 
+config:
   jira_ca_bundle: /etc/pki/ca-trust/extracted/openssl/ca-bundle.trust.crt
   jira_default_assignee: jira-assegnee
   jira_default_project_id: 00001
