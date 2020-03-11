@@ -5,3 +5,12 @@ config:
   jira_password: MyP@ssw0rd
   jira_server: https://jira.example.com
   jira_user: jira_login_name
+  user_issue_type:
+    user_type1:
+      labels:
+        - "label_for_type1"
+    user_type2:
+      jira_project_id: 00002
+      labels:
+        - "label1_for_type2"
+        - "label2_for_type2"
