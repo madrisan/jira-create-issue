@@ -1,5 +1,11 @@
 # Create new Jira issues at command-line
 
+![Release Status](https://img.shields.io/badge/status-beta-yellow.svg)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/08fcd94fc3f044d9a648bc69bcc03408)](https://www.codacy.com/manual/madrisan/jira-create-issue?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=madrisan/jira-create-issue&amp;utm_campaign=Badge_Grade)
+[![Code Climate](https://api.codeclimate.com/v1/badges/0045dfe3c89b62e7a74b/maintainability)](https://codeclimate.com/github/madrisan/jira-create-issue/maintainability)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/madrisan/jira-create-issue.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/madrisan/jira-create-issue/alerts/)
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/madrisan/jira-create-issue.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/madrisan/jira-create-issue/context:python)
+
 A Python script for creating new Jira issues (a task by default) at command-line.
 
 ## System Requirements
