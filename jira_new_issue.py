@@ -30,6 +30,10 @@ def argparser():
         action="store", dest="description",
         help="Long descripion for the issue to be created")
     parser.add_argument(
+        "--in-progress",
+        action="store", dest="status_in_progress",
+        help="Change the ticket status to 'In Progress'")
+    parser.add_argument(
         "-s", "--summary",
         action="store", dest="summary", required=True,
         help="Summary of the new issue")
@@ -61,7 +65,12 @@ if __name__ == '__main__':
 
     new_issue = jira.create_issue(**options)
 
-    print(('Ticket URL   : {}/browse/{}'
+    print(('Ticket URL : {}/browse/{}'
            .format(jira.server_url, new_issue)))
-    print(('Ticket Status: {}'
+    print(('Ticket Status : {}'
            .format(jira.status(new_issue))))
+
+    if status_in_progress:
+        jira.transition(new_issue, 'In Progress')
+        print(('New Ticket Status : {}'
+               .format(jira.status(new_issue))))

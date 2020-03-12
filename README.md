@@ -57,3 +57,5 @@ Here's an example of usage of the front-end script.
     --summary "This ia a new jira task" \
     --description "A longer description follows here..."
 ```
+
+Optionally the command-line option `--in-progress` can be added, to switch the issue to the status `In Progress`.

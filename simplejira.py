@@ -152,6 +152,23 @@ class Jira():
         issue = self.instance.issue(issue_id)
         return issue.fields.status
 
+    def transition(self, issue_id, new_status):
+        '''
+        Switch the issue 'issue_id' to the new status 'new_status'.
+        '''
+        issue = self.instance.issue(issue_id)
+        transitions = self.instance.transitions(issue)
+
+        transition_names = [t['name'] for t in transitions]
+        if new_status not in transition_names:
+            raise RuntimeError((
+                'Invalid transition status \'{}\', can be one of the following: {}'
+                .format(new_status,
+                        ', '.join(transition_names))))
+
+        r_json = self.instance.transition_issue(issue, new_status)
+        return r_json
+
     def transitions(self, issue_id):
         '''
         Return the list of the available transitions for the given issue.
