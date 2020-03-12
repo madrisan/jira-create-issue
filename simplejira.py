@@ -23,7 +23,7 @@ class Jira():
         try:
             with open(self.config_file, 'r') as fp_:
                 try:
-                    data = yaml.load(fp_, Loader=yaml.FullLoader)
+                    data = yaml.safe_load(fp_)
                 except yaml.YAMLError as exc:
                     raise ValueError((
                         "Error while parsing {0}: {1}"
@@ -75,11 +75,10 @@ class Jira():
         Return the Jira project ID associated to the given user issue type
         or the default one if not configured.
         '''
-        project_id = self._default_project_id
         try:
             project_id = self._user_issue_type[user_issue_type]['jira_project_id']
         except:
-            pass
+            project_id = self._default_project_id
 
         return project_id
 
