@@ -46,7 +46,6 @@ def argparser():
 
 def copyleft(descr):
     """Print the Copyright message and License."""
-
     return ("{0} -- v{1}\n{2} <{3}>\nLicense: {4}"
         .format(descr, __version__, __copyright__, __email__, __license__))
 

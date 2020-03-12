@@ -68,9 +68,8 @@ class Jira():
         return self._default_project_id
 
     def issue_project_id(self, user_issue_type):
-        """Return the Jira project ID associated to the given user issue type
-           or the default one if not configured.
-
+        """Return the Jira project ID associated to the given custom issue type.
+           Or the default issue type if a custom issue type is not configured.
         :param user_issue_type: a custom issue type defined in the
                configuration file.
         """
@@ -83,9 +82,7 @@ class Jira():
 
     def issue_labels(self, user_issue_type):
         """Return the labels configured for the given user issue type.
-
         Rise an exception if this setting is not found in the configuration.
-
         :param user_issue_type: a custom issue type defined in the
                configuration file.
         """
@@ -103,7 +100,6 @@ class Jira():
 
     def create_issue(self, summary, description=None, assignee=None, issuetype='Task', labels=[], project_id=None):
         """Create a new Jira issue of type 'Task' by default.
-
         :param: summary: The summary of the new issue.
         :param: description: The description of the new issue.
         :param: assignee: The assignee of the new issue.
@@ -145,7 +141,6 @@ class Jira():
 
     def project(self, project_name):
         """Return the list of all the projects.
-
         :param: project_name: A project name (must be one of the project
                 listed by the class method 'projects').
         """
@@ -153,7 +148,6 @@ class Jira():
 
     def status(self, issue_id):
         """Get the current status of the given issue.
-
         :param: issue_id: The Jira issue identifier.
         """
         issue = self.instance.issue(issue_id)
@@ -161,7 +155,6 @@ class Jira():
 
     def transition(self, issue_id, new_status):
         """Switch the issue 'issue_id' to the new status 'new_status'.
-
         :param: issue_id: The Jira issue identifier.
         :param: new_status: The new status to switch the ticket to.
                 By example 'In Progress'.
@@ -181,7 +174,6 @@ class Jira():
 
     def transitions(self, issue_id):
         """Return the list of the available transitions for the given issue.
-
         :param: issue_id: The Jira issue identifier.
         """
         issue = self.instance.issue(issue_id)
