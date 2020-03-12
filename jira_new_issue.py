@@ -15,7 +15,7 @@ __email__ = "davide.madrisan@gmail.com"
 __status__ = "stable"
 
 def argparser():
-    """This function parses and return arguments passed in"""
+    """Command-line argument parser. Return arguments passed in."""
     descr = ("Open a new Jira task.")
     parser = argparse.ArgumentParser(
                  formatter_class = argparse.RawDescriptionHelpFormatter,
@@ -45,7 +45,7 @@ def argparser():
     return parser.parse_args()
 
 def copyleft(descr):
-    """Print the Copyright message and License """
+    """Print the Copyright message and License."""
 
     return ("{0} -- v{1}\n{2} <{3}>\nLicense: {4}"
         .format(descr, __version__, __copyright__, __email__, __license__))
@@ -70,7 +70,7 @@ if __name__ == '__main__':
     print(('Ticket Status : {}'
            .format(jira.status(new_issue))))
 
-    if status_in_progress:
+    if args.status_in_progress:
         jira.transition(new_issue, 'In Progress')
         print(('New Ticket Status : {}'
                .format(jira.status(new_issue))))
