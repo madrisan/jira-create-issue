@@ -57,7 +57,7 @@ if __name__ == '__main__':
     }
     if args.issue_type:
         options['labels'] = jira.issue_labels(args.issue_type)
-        options['projext_id'] = jira.issue_project_id(args.issue_type)
+        options['project_id'] = jira.issue_project_id(args.issue_type)
 
     new_issue = jira.create_issue(**options)
 

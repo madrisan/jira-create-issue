@@ -104,8 +104,8 @@ class Jira():
         Create a new Jira issue of type 'Task' by default.
         '''
         if not project_id:
-            project = self.default_project_id
-            if not project:
+            project_id = self.default_project_id
+            if not project_id:
                 raise Exception(
                     'neither project_id arg, nor jira_default_project_id in config are defined')
         data = {
@@ -113,7 +113,7 @@ class Jira():
                 'name': issuetype
             },
             'project': {
-                   'id': project
+                   'id': project_id
             },
             'summary': summary
         }
