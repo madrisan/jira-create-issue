@@ -5,6 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 from jira.client import JIRA
+import base64
 import logging
 import os
 import yaml
@@ -42,8 +43,10 @@ class Jira():
             'verify': self.config['jira_ca_bundle']
         }
         try:
-            basic_auth = (self.config['jira_user'],
-                          self.config['jira_password'])
+            jira_user = self.config['jira_user']
+            jira_password = (base64.b64decode(self.config['jira_password'])
+                                   .decode('utf-8'))
+            basic_auth = (jira_user, jira_password)
             self.instance = JIRA(basic_auth=basic_auth,
                                  logging=False,
                                  max_retries=1,
