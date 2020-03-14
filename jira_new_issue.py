@@ -31,7 +31,7 @@ def argparser():
         help="Long descripion for the issue to be created")
     parser.add_argument(
         "--in-progress",
-        action="store", dest="status_in_progress",
+        action="store_true", dest="status_in_progress",
         help="Change the ticket status to 'In Progress'")
     parser.add_argument(
         "-s", "--summary",
