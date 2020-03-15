@@ -75,7 +75,7 @@ class Jira():
         """
         try:
             project_id = self._user_issue_type[user_issue_type]['jira_project_id']
-        except:
+        except Exception:
             project_id = self._default_project_id
 
         return project_id
