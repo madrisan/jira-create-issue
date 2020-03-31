@@ -13,8 +13,6 @@ if __name__ == '__main__':
     jira = simplejira.Jira()
     projects = jira.projects()
 
-    #data = [[0 for x in range(projects)] for y in [project.id, project.key, project.name]]
-
     data = []
     for project in projects:
         row = [ project.id, project.key, project.name ]
