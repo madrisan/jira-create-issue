@@ -59,3 +59,7 @@ Here's an example of usage of the front-end script.
 ```
 
 Optionally the command-line option `--in-progress` can be added, to switch the issue to the status `In Progress`.
+
+## Other scripts
+
+ * `jira_projects.py`: print the list of the Jira Projects in tabular form (requires `python3-tabulate`).
